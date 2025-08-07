@@ -131,19 +131,24 @@ Vous pouvez vous connecter à la base de données PostgreSQL avec un client SQL 
 
 *Instructions : Les captures d'écran ci-dessous, situées dans le dossier `/screenshots`, prouvent le bon fonctionnement de chaque composant clé de l'infrastructure.*
 
-**1. Statut des conteneurs** *Preuve que tous les services sont démarrés et sains.*
+**1. Statut des conteneurs**
+*Preuve que tous les services sont démarrés et sains.*
 ![Statut des conteneurs](screenshots/docker-compose-ps.png)
 
-**2. Tableau de bord Traefik** *Preuve que le reverse proxy a correctement découvert et configuré toutes les routes.*
+**2. Tableau de bord Traefik**
+*Preuve que le reverse proxy a correctement découvert et configuré toutes les routes.*
 ![Routeurs Traefik](screenshots/routeurs-traefik.png)
 
-**3. Cibles Prometheus** *Preuve que Prometheus scrape avec succès les métriques de tous les services.*
+**3. Cibles Prometheus**
+*Preuve que Prometheus scrape avec succès les métriques de tous les services.*
 ![Cibles Prometheus](screenshots/target-promethus.png)
 
-**4. Dashboard Grafana** *Preuve que la chaîne de monitoring fonctionne jusqu'à la visualisation.*
+**4. Dashboard Grafana**
+*Preuve que la chaîne de monitoring fonctionne jusqu'à la visualisation.*
 ![Dashboard Grafana](screenshots/grafana-dahsboard.png)
 
-**5. Test de l'API (Création et Lecture)** *Preuve que l'API est fonctionnelle et connectée à la base de données.*
+**5. Test de l'API (Création et Lecture)**
+*Preuve que l'API est fonctionnelle et connectée à la base de données.*
 ![Test de création](screenshots/Invoke-WebRequest.png)
 ![Test de lecture](screenshots/curl.png)
 
