@@ -129,13 +129,23 @@ Vous pouvez vous connecter à la base de données PostgreSQL avec un client SQL 
 
 ## ✅ Preuves de Fonctionnement
 
-*Instructions : Après avoir lancé `./scripts/deploy.sh start`, prenez les captures d'écran et nommez-les comme indiqué ci-dessous dans le dossier `/screenshots`.*
+*Instructions : Les captures d'écran ci-dessous, situées dans le dossier `/screenshots`, prouvent le bon fonctionnement de chaque composant clé de l'infrastructure.*
 
-1.  **Statut des conteneurs :** `![Statut des conteneurs](screenshots/docker-compose-ps.png)`
-2.  **Tableau de bord Traefik :** `![Routeurs Traefik](screenshots/routeurs-traefik.png)`
-3.  **Cibles Prometheus :** `![Cibles Prometheus](screenshots/target-promethus.png)`
-4.  **Dashboard Grafana :** `![Dashboard Grafana](screenshots/grafana-dahsboard.png)`
-5.  **Test de l'API :** `![Test de création](screenshots/Invoke-WebRequest.png)` et `![Test de lecture](screenshots/curl.png)`
+**1. Statut des conteneurs** *Preuve que tous les services sont démarrés et sains.*
+![Statut des conteneurs](screenshots/docker-compose-ps.png)
+
+**2. Tableau de bord Traefik** *Preuve que le reverse proxy a correctement découvert et configuré toutes les routes.*
+![Routeurs Traefik](screenshots/routeurs-traefik.png)
+
+**3. Cibles Prometheus** *Preuve que Prometheus scrape avec succès les métriques de tous les services.*
+![Cibles Prometheus](screenshots/target-promethus.png)
+
+**4. Dashboard Grafana** *Preuve que la chaîne de monitoring fonctionne jusqu'à la visualisation.*
+![Dashboard Grafana](screenshots/grafana-dahsboard.png)
+
+**5. Test de l'API (Création et Lecture)** *Preuve que l'API est fonctionnelle et connectée à la base de données.*
+![Test de création](screenshots/Invoke-WebRequest.png)
+![Test de lecture](screenshots/curl.png)
 
 ---
 ## 📝 Licence
