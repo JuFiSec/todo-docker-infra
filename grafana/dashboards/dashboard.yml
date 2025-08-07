@@ -1,0 +1,16 @@
+# Configuration des dashboards Grafana
+# Auteur: FIENI Dannie Innocent Junior
+# Formation: MCS 26.2 Cybersécurité & Cloud Computing - IPSSI Nice
+
+apiVersion: 1
+
+providers:
+  - name: 'default'
+    orgId: 1
+    folder: 'Monitoring Application TODO'
+    type: file
+    disableDeletion: false
+    updateIntervalSeconds: 10
+    allowUiUpdates: true
+    options:
+      path: /var/lib/grafana/dashboards

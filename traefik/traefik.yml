@@ -1,0 +1,75 @@
+# Configuration Traefik
+# Auteur: FIENI Dannie Innocent Junior
+# Formation: MCS 26.2 Cybersécurité & Cloud Computing - IPSSI Nice
+
+# Configuration globale
+global:
+  checkNewVersion: false
+  sendAnonymousUsage: false
+
+# API et dashboard
+api:
+  dashboard: true
+  debug: true
+  insecure: true
+
+# Points d'entrée
+entryPoints:
+  web:
+    address: ":80"
+  websecure:
+    address: ":443"
+  traefik:
+    address: ":8080"
+
+# Configuration des fournisseurs
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    network: "todo-docker-infra_frontend"
+    watch: true
+
+  file:
+    filename: /etc/traefik/traefik.yml
+    watch: true
+
+# Configuration des certificats (pour future configuration HTTPS)
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: "dannie.fieni@example.com"
+      storage: "/etc/traefik/acme.json"
+      httpChallenge:
+        entryPoint: "web"
+
+# Métriques pour Prometheus
+metrics:
+  prometheus:
+    addEntryPointsLabels: true
+    addServicesLabels: true
+    addRoutersLabels: true
+
+# Configuration des logs
+log:
+  level: INFO
+  format: json
+
+accessLog:
+  format: json
+  fields:
+    headers:
+      names:
+        User-Agent: keep
+        Authorization: drop
+        Content-Type: keep
+
+# Configuration pilot (désactivée pour sécurité)
+pilot:
+  dashboard: false
+
+# Tracing (optionnel)
+#tracing:
+#  jaeger:
+#    samplingType: const
+#    samplingParam: 1.0
