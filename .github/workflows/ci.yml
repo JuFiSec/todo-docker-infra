@@ -19,7 +19,7 @@ jobs:
       run: cp .env.example .env
         
     - name: Démarrage de l'infrastructure Docker
-      run: docker-compose up -d --build
+      run: docker compose up -d --build
       
     - name: Attente active de la disponibilité de l'API
       run: |
@@ -33,11 +33,11 @@ jobs:
         
     - name: Affichage du statut des services en cas de succès
       if: success()
-      run: docker-compose ps
+      run: docker compose ps
 
     - name: Affichage des logs en cas d'échec
       if: failure()
-      run: docker-compose logs
+      run: docker compose logs
 
   scan-securite:
     name: Scan de Sécurité des Vulnérabilités
