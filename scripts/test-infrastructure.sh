@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+# Script de test de l'infrastructure (Version ultra-simple et fiable)
 set -e
 GREEN='\033[0;32m'
 RED='\033[0;31m'
@@ -27,13 +27,13 @@ tester "Création de tâche API" "curl -f -s -X POST -H 'Content-Type: applicati
 tester "Dashboard Traefik" "curl -f -s http://localhost:8081/dashboard/"
 tester "Interface Prometheus" "curl -f -s http://localhost:9090/graph"
 tester "Interface Grafana" "curl -f -s http://localhost:3000/login"
-tester "Connexion à la base de données" "docker-compose exec -T db psql -U todo_user -d todo_app -c 'SELECT 1'"
+tester "Connexion à la base de données" "docker compose exec -T db psql -U todo_user -d todo_app -c 'SELECT 1'"
 
 echo "-----------------------------------------------"
 if [ $ECHECS -eq 0 ]; then
-    echo -e "${GREEN} TOUS LES TESTS SONT RÉUSSIS !${NC}"
+    echo -e "${GREEN}✅ TOUS LES TESTS SONT RÉUSSIS !${NC}"
     exit 0
 else
-    echo -e "${RED} $ECHECS TEST(S) ONT ÉCHOUÉ.${NC}"
+    echo -e "${RED}❌ $ECHECS TEST(S) ONT ÉCHOUÉ.${NC}"
     exit 1
 fi
