@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script de test de l'infrastructure (Version ultra-simple et fiable)
+# Script de test (Version ultra-simple et fiable)
 set -e
 GREEN='\033[0;32m'
 RED='\033[0;31m'
